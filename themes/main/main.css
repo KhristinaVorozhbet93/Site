@@ -1,0 +1,17 @@
+header {
+    background-color: lightgray; 
+    height: 150px;
+}
+main {
+    padding: 50 px;
+    height: 200px;
+    margin: 50px;
+}
+footer {
+    background-color: lightgray; 
+    height: 150px;
+}
+
+.res_mes {
+    color:red;
+}
