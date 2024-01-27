@@ -7,12 +7,12 @@ if (isset($_POST['register'])) {
     $fh = fopen($filename, 'a');
     fwrite($fh, $user);
     fclose($fh);
-    header("Location: reg.php?res_mes=Registred");
+    header("Location: ./reg.php?res_mes=Registred");
 }
 //Logout
 if (isset($_GET['logout'])) {
     unset($_SESSION['pers_set']);
-    header("Location: index.php?res_mes=Logged out");
+    header("Location: ./index.php?res_mes=Logged out");
     exit;
 }
 //Autherization
@@ -24,11 +24,11 @@ if (isset($_POST['auth'])) {
             $_SESSION['pers_set']['email'] = $_POST['email'];
             $_SESSION['pers_set']['first_name'] = $tmp[2];
             $_SESSION['pers_set']['role'] = trim($tmp[3]);
-            header("Location: index.php?res_mes=Authorized");
+            header("Location: ./index.php?res_mes=Authorized");
             exit;
         }
     }
-    header("Location: index.php?res_mes=User not found");
+    header("Location: ./index.php?res_mes=User not found");
     exit;
 }
 ?>
