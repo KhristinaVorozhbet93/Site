@@ -3,7 +3,17 @@ include 'inc/header.inc.php';
 
 //Registration
 if (isset($_POST['register'])) {
-    $user = $_POST['email'] . '~~~' . $_POST['user_pass'] . '~~~' . $_POST['first_name'] . '~~~u' . "\n";
+    $dump = file($filename);
+    foreach ($dump as $val) {
+        $tmp = explode('~~~', $val);
+        if($tmp[0] == $_POST['email'])
+        {
+            header("Location: ./reg.php?res_mes=User with this e-mail already exists");
+            exit;
+        }
+    }
+
+    $user = $_POST['email'] . '~~~' . md5($_POST['user_pass']) . '~~~' . $_POST['first_name'] . '~~~u' . "\n";
     $fh = fopen($filename, 'a');
     fwrite($fh, $user);
     fclose($fh);
@@ -20,7 +30,7 @@ if (isset($_POST['auth'])) {
     $dump = file($filename);
     foreach ($dump as $val) {
         $tmp = explode('~~~', $val);
-        if ($tmp[0] == $_POST['email'] && $tmp[1] == $_POST['user_pass']) {
+        if ($tmp[0] == $_POST['email'] && $tmp[1] == md5($_POST['user_pass'])) {
             $_SESSION['pers_set']['email'] = $_POST['email'];
             $_SESSION['pers_set']['first_name'] = $tmp[2];
             $_SESSION['pers_set']['role'] = trim($tmp[3]);

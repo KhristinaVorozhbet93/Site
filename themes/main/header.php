@@ -12,7 +12,8 @@
     <header>Наша компания
         <p>
             <a href="./">Главная</a>
-            <a href="./about.php">О компании</a>
+            <a href="./about.php?division=1">О подразделении 1</a>
+            <a href="./about.php?division=2">О подразделении 2</a>
             <a href="./contacts.php">Контакты</a>
             <a href="./reg.php">Регистрация</a>
             <a href="cp/users.php">Пользователи</a>
@@ -29,7 +30,7 @@
         </form>';
         } else {
             echo 'Welcome' . ' ' . $_SESSION['pers_set']['first_name'] . ($_SESSION['pers_set']['role'] == 'a' ? '[admin]' : '') .
-                '<a href="./actions.php?logout=1">Logout</a>';
+                's<a href="./actions.php?logout=1">Logout</a>';
         }
         ?>
 

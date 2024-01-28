@@ -1,9 +1,9 @@
 <?php
-include '../themes/main/header.php';
+include '../themes/admin/header.php';
 include '../inc/header.inc.php';
 
 if ($_SESSION['pers_set']['role'] != 'a') {
-    $dump = file('../'.$filename);
+    $dump = file('./'.$filename);
 
     echo '
     <div> class="users_1"
@@ -23,4 +23,4 @@ if ($_SESSION['pers_set']['role'] != 'a') {
 ?>
 
 <?php
-include '../themes/main/footer.php'; ?>
+include '../themes/admin/footer.php'; ?>
