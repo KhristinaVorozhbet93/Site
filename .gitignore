@@ -13,6 +13,9 @@
 /app/phpunit.xml
 /phpunit.xml
 
+#Files
+/data
+
 # Build data
 /build/
 
