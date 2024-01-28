@@ -14,7 +14,8 @@
 /phpunit.xml
 
 #Files
-/data
+/data/users.php
+/data/rezume.txt
 
 # Build data
 /build/
