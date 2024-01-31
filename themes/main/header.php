@@ -14,10 +14,10 @@
             <a href="./">Главная</a>
             <a href="./about.php?division=1">О подразделении 1</a>
             <a href="./about.php?division=2">О подразделении 2</a>
+            <a href="./gallery.php">Картинки</a>
             <a href="./contacts.php">Контакты</a>
             <a href="./reg.php">Регистрация</a>
-            <a href="cp/users.php">Пользователи</a>
-            <?php (@$_SESSION['pers_set']['role'] == 'a') ? '<a href="cp/users.php">Пользователи</a>' : ' ' ?>
+            <?php echo (@$_SESSION['pers_set']['role'] == 'a') ? '<a href="./cp/users.php">Пользователи</a>' : ' ' ?>
         </p>
         <hr />
 
@@ -30,7 +30,7 @@
         </form>';
         } else {
             echo 'Welcome' . ' ' . $_SESSION['pers_set']['first_name'] . ($_SESSION['pers_set']['role'] == 'a' ? '[admin]' : '') .
-                's<a href="./actions.php?logout=1">Logout</a>';
+                '<a href="./actions.php?logout=1">Logout</a>';
         }
         ?>
 
