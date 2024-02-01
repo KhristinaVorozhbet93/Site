@@ -18,12 +18,16 @@ footer {
     color: red;
 }
 
-.users_1 {
-    display: flex;
+.photos_1 {
+    margin-top: 30px;
 }
 
-.users_1 div {
-    width: 33%;
-    border: 1 px solid;
-    ;
+.photos_1 .item {
+    display: inline-block;
+}
+
+.photos_1 .item img {
+    display: block;
+    border: 1px solid;
+    width: 300px;
 }
