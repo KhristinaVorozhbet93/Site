@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="themes/main/main.css" type="text/css">
+    <script type=" text/javascript" src="/themes/main/jquery-3.5.1.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -15,6 +16,7 @@
             <a href="./about.php?division=1">О подразделении 1</a>
             <a href="./about.php?division=2">О подразделении 2</a>
             <?php echo (in_array(@$_SESSION['pers_set']['role'], array('a', 'u'))) ? '<a href="./gallery.php">Картинки</a>' : ' ' ?>
+            <a href="./products.php">Продукция</a>
             <a href="./contacts.php">Контакты</a>
             <a href="./reg.php">Регистрация</a>
             <?php echo (@$_SESSION['pers_set']['role'] == 'a') ? '<a href="./cp/users.php">Пользователи</a>' : ' ' ?>
